@@ -22,11 +22,16 @@ jobs:
         run: ./scripts/buildprod.sh
 
       - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@v2
+        uses: google-github-actions/setup-gcloud@v1
         with:
           service_account_key: ${{ secrets.GCP_CREDENTIALS }}
           export_default_credentials: true
-      
+
+      - name: Set GCP Project
+        run: gcloud config set project notely-430012
+
       - name: Build and Push Docker Image
+        env:
+          CLOUDSDK_CORE_PROJECT: notely-430012
         run: |
-          gcloud builds submit --tag us-central1-docker.pkg.dev/notely-430012/notely-ar-repo/ramzec2010/notely:latest  . 
+          gcloud builds submit --tag us-central1-docker.pkg.dev/notely-430012/notely-ar-repo/ramzec2010/notely:latest . 

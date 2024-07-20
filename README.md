@@ -1,5 +1,10 @@
 ![code coverage badge](https://github.com/roman-hushpit/learn-cicd-starter/actions/workflows/ci.yml/badge.svg)
 
+us-central1-docker.pkg.dev/notely-430012/notely-ar-repo
+
+ramzec2010/notely:latest 
+
+gcloud builds submit --tag us-central1-docker.pkg.dev/notely-430012/notely-ar-repo/ramzec2010/notely:latest  . 
 
 # learn-cicd-starter (Notely)
 
