@@ -40,6 +40,6 @@ jobs:
       - name: Check styling
         run: test -z $(go fmt ./...)
       
-      - name: Static check
+      - name: staticcheck
         run: staticcheck ./...
 
